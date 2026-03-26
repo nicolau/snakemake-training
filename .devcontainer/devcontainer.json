@@ -3,7 +3,7 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    
+    "postStartCommand": "echo 'Welcome to Snakemake training'",
     "customizations": {
         "vscode": {
             "extensions": [
