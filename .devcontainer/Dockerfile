@@ -14,6 +14,6 @@ RUN apt install -y --no-install-recommends \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-#COPY environment.yaml /temp/environment.yaml
+COPY environment.yaml /temp/environment.yaml
 #RUN conda create -n snakemake -f /tmp/environment.yaml
 #RUN conda activate snakemake
