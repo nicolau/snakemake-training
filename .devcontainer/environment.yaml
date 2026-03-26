@@ -1,0 +1,9 @@
+name: snakemake-training
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  - python=3.12
+  - snakemake
+  - pandas
