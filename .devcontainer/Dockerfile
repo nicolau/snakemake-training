@@ -1,9 +1,9 @@
-FROM continuumio/miniconda3
+FROM continuumio/miniconda3:26.1.1
 
 RUN apt update && apt upgrade -y && apt install -y \
     curl bzip2 ca-certificates git vim htop \
     && rm -rf /var/lib/apt/lists/*
 
-COPY environment.yaml /temp/environment.yaml
-RUN conda create -n snakemake -f /tmp/environment.yaml
-RUN conda activate snakemake
+#COPY environment.yaml /temp/environment.yaml
+#RUN conda create -n snakemake -f /tmp/environment.yaml
+#RUN conda activate snakemake
