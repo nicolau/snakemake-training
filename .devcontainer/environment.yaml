@@ -4,6 +4,6 @@ channels:
   - bioconda
   - nodefaults
 dependencies:
-  - python=3.14.3
+  - python=3.12
   - snakemake=9.16.2
   - pandas
