@@ -1,4 +1,4 @@
-name: snakemake-training
+name: snakemake_training
 channels:
   - conda-forge
   - bioconda
