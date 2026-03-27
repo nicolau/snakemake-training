@@ -10,7 +10,8 @@ RUN apt install -y --no-install-recommends \
     vim \
     htop \
     curl \
-    cmake
+    cmake \
+    graphviz
 
 RUN rm -rf /var/lib/apt/lists/*
 
