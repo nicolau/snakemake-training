@@ -1,4 +1,4 @@
-FROM continuumio/miniconda3:26.1.1
+FROM continuumio/miniconda3:latest
 
 RUN rm -rf /var/lib/apt/lists/*
 RUN apt update -y && apt upgrade -y
