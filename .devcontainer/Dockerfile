@@ -11,7 +11,8 @@ RUN apt install -y --no-install-recommends \
     htop \
     curl \
     cmake \
-    graphviz
+    graphviz \
+    zsh
 
 RUN rm -rf /var/lib/apt/lists/*
 
