@@ -19,4 +19,12 @@ COPY environment.yaml /tmp/environment.yaml
 RUN conda env create -n snakemake_training -f /tmp/environment.yaml
 RUN conda init
 
-RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+
+# Set theme
+RUN sed -i 's/^ZSH_THEME=.*/ZSH_THEME="agnoster"/' ~/.zshrc
+
+# Set default shell
+SHELL ["/bin/zsh", "-c"]
+
+CMD ["zsh"]
