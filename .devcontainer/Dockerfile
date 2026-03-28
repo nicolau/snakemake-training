@@ -25,7 +25,6 @@ RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master
 # Set theme
 RUN sed -i 's/^ZSH_THEME=.*/ZSH_THEME="agnoster"/' ~/.zshrc
 
-# Set default shell
-SHELL ["/bin/zsh", "-c"]
+#RUN chsh -s /bin/zsh vscode
 
-CMD ["zsh"]
+#RUN usermod --shell /bin/zsh vscode

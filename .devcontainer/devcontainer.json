@@ -4,11 +4,11 @@
         "dockerfile": "Dockerfile"
     },
     "postStartCommand": "echo 'Welcome to Snakemake training'",
-    "postCreateCommand": "zsh",
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python"
+                "ms-python.python",
+                "terminal.integrated.defaultProfile.linux": "zsh"
             ]
         }
     }
