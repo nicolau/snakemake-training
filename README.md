@@ -109,9 +109,9 @@ snakemake --dag | dot -Tpdf > dag.pdf
 
 ---
 
-## 📘 3. Training Content
+## 3. Training Content
 
-### 🔹 3.1 Basic Snakemake Concepts
+### 3.1 Basic Snakemake Concepts
 
 You will learn:
 
@@ -126,7 +126,7 @@ Example:
 
 ---
 
-### 🔹 3.2 Different Execution Modes
+### 3.2 Different Execution Modes
 
 We will explore:
 
@@ -136,7 +136,7 @@ We will explore:
 
 ---
 
-### 🔹 3.3 Key Concepts
+### 3.3 Key Concepts
 
 - Rule dependencies
 - Wildcards
@@ -145,7 +145,7 @@ We will explore:
 
 ---
 
-## 🧬 4. RNA-seq Pipeline
+## 4. RNA-seq Pipeline
 
 You will build a simplified RNA-seq workflow:
 
@@ -166,17 +166,17 @@ You will build a simplified RNA-seq workflow:
 
 ---
 
-## 🧠 5. Exercises
+## 5. Exercises
 
-### ✅ Exercise 1
+### Exercise 1
 Replace **Trimmomatic** with **fastp**
 
-### ✅ Exercise 2
+### Exercise 2
 Add:
 - FastQC
 - MultiQC
 
-### 💡 Optional Challenges
+### Optional Challenges
 
 - Add new samples
 - Use a `config.yaml`
@@ -185,7 +185,7 @@ Add:
 
 ---
 
-## 🛠️ 6. Useful Commands
+## 6. Useful Commands
 
 ```bash
 # Dry run
@@ -206,7 +206,7 @@ snakemake -F
 
 ---
 
-## 🧩 7. Repository Structure
+## 7. Repository Structure
 
 ```
 .
@@ -220,7 +220,7 @@ snakemake -F
 
 ---
 
-## ⚠️ Troubleshooting
+## Troubleshooting
 
 ### Snakemake not found
 → Activate environment:
