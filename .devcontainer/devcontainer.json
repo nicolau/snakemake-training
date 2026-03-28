@@ -4,6 +4,7 @@
         "dockerfile": "Dockerfile"
     },
     "postStartCommand": "echo 'Welcome to Snakemake training'",
+    "postCreateCommand": "zsh",
     "customizations": {
         "vscode": {
             "extensions": [
