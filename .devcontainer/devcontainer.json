@@ -7,8 +7,7 @@
     "customizations": {
         "vscode": {
             "extensions": [
-                "ms-python.python",
-                "terminal.integrated.defaultProfile.linux": "zsh"
+                "ms-python.python"
             ]
         }
     }
