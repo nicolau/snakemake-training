@@ -1,0 +1,4 @@
+# Pre-training tutorial section snakemake temporary files and results
+01-pre-training-tutorial/.snakemake/
+01-pre-training-tutorial/results/
+
