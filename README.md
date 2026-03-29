@@ -20,6 +20,9 @@ No installation required — everything runs in your browser.
 
 1. Click **Code** → **Codespaces** → **Create codespace on main**
 2. Wait for the environment to build
+
+![alt text](resources/images/ready_to_use.png)
+
 3. Open a terminal
 4. Run:
 
