@@ -16,15 +16,17 @@ RUN apt install -y --no-install-recommends \
 
 RUN rm -rf /var/lib/apt/lists/*
 
-COPY environment.yaml /tmp/environment.yaml
-RUN conda env create -n snakemake_training -f /tmp/environment.yaml
-RUN conda init
-
 RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 
 # Set theme
 RUN sed -i 's/^ZSH_THEME=.*/ZSH_THEME="agnoster"/' ~/.zshrc
 
 RUN chsh -s /bin/zsh root
+
+COPY environment.yaml /tmp/environment.yaml
+RUN conda env create -n snakemake_training -f /tmp/environment.yaml
+#RUN conda init
+
+RUN conda init zsh
 
 #RUN usermod --shell /bin/zsh root
