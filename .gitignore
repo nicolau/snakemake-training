@@ -2,3 +2,4 @@
 01-pre-training-tutorial/.snakemake/
 01-pre-training-tutorial/results/
 
+.DS_Store
