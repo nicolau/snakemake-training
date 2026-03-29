@@ -18,20 +18,20 @@ You have two options to run this training:
 
 No installation required — everything runs in your browser.
 
-1. Click **Code** → **Codespaces** → **Create codespace on main**
-2. Wait for the environment to build
+#### 1. Click **Code** → **Codespaces** → **Create codespace on main**
+#### 2. Wait for the environment to build
 
 ![alt text](resources/images/ready_to_use.png)
 
-3. Open a terminal
-4. Run:
+#### 3. Open a terminal
+#### 4. Run:
 
 ```bash
 conda activate snakemake_training
 snakemake --version
 ```
 
-5. What result is expected:
+#### 5. What result is expected:
 
 ```bash
 9.16.2
@@ -55,11 +55,13 @@ git clone https://github.com/nicolau/snakemake_training.git
 cd snakemake_training
 ```
 
-#### 3. Start the container
+#### 3. Build a Docker image
 
 ```bash
 docker build -f .devcontainer/Dockerfile -t snakemake_image .
 ```
+
+#### 4. Start a Docker container
 
 ```bash
 docker run -itd \
@@ -69,20 +71,22 @@ docker run -itd \
   snakemake_image:latest /bin/bash
 ```
 
+#### 5. Access terminal from Docker container
 ```bash
 docker exec -it snakemake_container /bin/bash
 ```
 
-#### 4. Create Snakemake environment
+#### 6. Activate and test Snakemake environment
 
 ```bash
 conda activate snakemake_training
+snakemake --version
 ```
 
-#### 5. Verify installation
+#### 7. What result is expected:
 
 ```bash
-snakemake --version
+9.16.2
 ```
 
 ---
