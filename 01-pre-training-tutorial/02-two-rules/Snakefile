@@ -1,0 +1,8 @@
+rule first_step:
+    output: "results/output.txt"
+    shell: "echo 'Hello Bioinformatic World!' > {output}"
+
+rule upper_case:
+    input: "results/output.txt"
+    output: "results/uppercase_output.txt"
+    shell: "tr '[:lower:]' '[:upper:]' < {input} > {output}"
