@@ -98,9 +98,72 @@ Before starting, make sure everything works.
 ### Run a test workflow
 
 ```bash
-cd 01-pre-training-tutorial
+cd 01-pre-training-tutorial/01-first-step
 snakemake -n results/output.txt
+```
+
+Expected result
+```bash
+host: codespaces-9c361c
+Building DAG of jobs...
+Job stats:
+job           count
+----------  -------
+first_step        1
+total             1
+
+
+[Fri Apr  3 11:41:43 2026]
+rule first_step:
+    output: results/output.txt
+    jobid: 0
+    reason: Missing output files: results/output.txt
+    resources: tmpdir=<TBD>
+Job stats:
+job           count
+----------  -------
+first_step        1
+total             1
+
+Reasons:
+    (check individual jobs above for details)
+    output files have to be generated:
+        first_step
+This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
+```
+
+execute
+```bash
 snakemake -j 1 results/output.txt
+```
+
+Expected result
+```bash
+Assuming unrestricted shared filesystem usage.
+host: codespaces-9c361c
+Building DAG of jobs...
+Using shell: /usr/bin/bash
+Provided cores: 1 (use --cores to define parallelism)
+Rules claiming more threads will be scaled down.
+Job stats:
+job           count
+----------  -------
+first_step        1
+total             1
+
+Select jobs to execute...
+Execute 1 jobs...
+
+[Fri Apr  3 11:45:13 2026]
+localrule first_step:
+    output: results/output.txt
+    jobid: 0
+    reason: Missing output files: results/output.txt
+    resources: tmpdir=/tmp
+[Fri Apr  3 11:45:13 2026]
+Finished jobid: 0 (Rule: first_step)
+1 of 1 steps (100%) done
+Complete log(s): /workspaces/snakemake-training/01-pre-training-tutorial/01-first-step/.snakemake/log/2026-04-03T114513.043293.snakemake.log
 ```
 
 ### Generate DAG
