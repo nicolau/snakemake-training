@@ -1,3 +1,0 @@
-rule first_step:
-    output: "results/output.txt"
-    shell: "echo 'Hello Bioinformatic World!' > {output}"
