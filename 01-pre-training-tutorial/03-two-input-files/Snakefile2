@@ -1,0 +1,15 @@
+rule first_step:
+    input: "input-files/{sample}.txt"
+    output: "results/output_{sample}.txt"
+    shell: "cat {input} > {output}"
+
+
+rule upper_case:
+    input: "results/output_{sample}.txt"
+    output: "results/uppercase_output_{sample}.txt"
+    shell: "tr '[:lower:]' '[:upper:]' < {input} > {output}"
+
+# snakemake -n -s Snakefile2 results/uppercase_output_A.txt
+# snakemake -n -s Snakefile2 results/uppercase_output_B.txt
+# snakemake -n -s Snakefile2 results/uppercase_output_A.txt results/uppercase_output_B.txt
+# snakemake -n -s Snakefile2 results/uppercase_output_{A,B}.txt
