@@ -1,0 +1,7 @@
+rule first_step:
+    output: "results/output.txt"
+    shell: "echo 'Hello Bioinformatic World!' > {output}"
+
+
+# Exercice
+# create a new snakefile with rule with name my_task that creates a output file in "results/my_output.txt" with the content "This is my first task in Snakemake!"

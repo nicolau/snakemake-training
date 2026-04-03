@@ -1,0 +1,18 @@
+SAMPLES=["A", "B"]
+
+rule first_step:
+    input: "input-files/{sample}.txt"
+    output: "results/output_{sample}.txt"
+    shell: "cat {input} > {output}"
+
+rule upper_case:
+    input: "results/output_{sample}.txt"
+    output: "results/uppercase_output_{sample}.txt"
+    shell: "tr '[:lower:]' '[:upper:]' < {input} > {output}"
+
+rule aggregate_files:
+    input: expand("results/uppercase_output_{sample}.txt", sample=SAMPLES)
+    output: "results/aggregate_files.txt"
+    shell: "cat {input} > {output}"
+
+# snakemake -n -s Snakefile3 results/aggregate_files.txt
