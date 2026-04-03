@@ -1,5 +1,5 @@
 rule first_step:
-    input: "data/A.txt"
+    input: "input-files/A.txt"
     output: "results/output_A.txt"
     shell: "cat {input} > {output}"
 
@@ -7,3 +7,5 @@ rule upper_case:
     input: "results/output_A.txt"
     output: "results/uppercase_output_A.txt"
     shell: "tr '[:lower:]' '[:upper:]' < {input} > {output}"
+
+# snakemake -n results/uppercase_output_A.txt
