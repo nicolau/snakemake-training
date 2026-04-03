@@ -1,0 +1,9 @@
+rule first_step:
+    input: ["data/A.txt", "data/B.txt"]
+    output: "results/output.txt"
+    shell: "cat {input} > {output}"
+
+rule upper_case:
+    input: "results/output.txt"
+    output: "results/uppercase_output.txt"
+    shell: "tr '[:lower:]' '[:upper:]' < {input} > {output}"
