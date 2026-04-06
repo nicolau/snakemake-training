@@ -1,0 +1,27 @@
+# Create conda environment for bioinformatics pipeline
+
+name: bioinfo
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.12
+  - snakemake=9.16.2
+  - pip
+  - pandas
+  - bwa
+  - samtools
+  - bcftools
+
+# Usage:
+# 1. Create the environment:
+#    conda env create -f environment.yaml
+# 2. Activate the environment:
+#    conda activate bioinformatics-pipeline
+# 3. Verify installation:
+#    bwa
+#    samtools
+#    bcftools
+# 4. Deactivate the environment when done:
+#    conda deactivate
