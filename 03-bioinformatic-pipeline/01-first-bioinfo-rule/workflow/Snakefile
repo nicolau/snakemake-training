@@ -6,14 +6,24 @@ rule all:
         "results/plots/quals.svg"
 
 
-rule bwa_map:
+rule bwa_index:
     input:
         "../resources/ref/genome.fa",
-        "../resources/reads/{sample}.fastq"
+    output:
+        idx=multiext("../resources/ref/genome.fa", ".amb", ".ann", ".bwt", ".pac", ".sa"),
+    shell:
+        "bwa index {input}"
+
+
+rule bwa_map:
+    input:
+        ref="../resources/ref/genome.fa",
+        index=rules.bwa_index.output,
+        reads="../resources/reads/{sample}.fastq"
     output:
         "results/mapped_reads/{sample}.bam"
     shell:
-        "bwa mem {input} | samtools view -Sb - > {output}"
+        "bwa mem {input.ref} {input.reads} | samtools view -Sb - > {output}"
 
 
 rule samtools_sort:
