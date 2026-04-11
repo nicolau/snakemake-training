@@ -6,13 +6,15 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - python=3.12
+  - python
   - snakemake=9.16.2
   - pip
   - pandas
   - bwa
   - samtools
   - bcftools
+  - matplotlib
+  - pysam
 
 # Usage:
 # 1. Create the environment:
