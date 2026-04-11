@@ -1,4 +1,6 @@
-SAMPLES=["A", "B"] # Need fix it
+#!/bin/bash
+SAMPLES="A
+B"
 
 mkdir -p results
 for sample in ${SAMPLES[@]}; do

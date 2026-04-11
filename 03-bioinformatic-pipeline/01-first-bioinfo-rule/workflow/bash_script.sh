@@ -1,7 +1,6 @@
 #!/bin/bash
-
-
-SAMPLES = ["A", "B"]
+SAMPLES="A
+B"
 
 for sample in "${SAMPLES[@]}"; do
     bwa mem ../resources/ref/genome.fa ../resources/reads/"$sample".fastq | samtools view -Sb - > results/mapped_reads/"$sample".bam

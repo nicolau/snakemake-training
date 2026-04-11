@@ -324,6 +324,31 @@ chmod -R 777 .
 
 ---
 
+## Glossary
+
+Conda environment command lines:
+
+```bash
+# List the conda environment available
+conda env list
+# Create a new conda environment from a YAML file
+conda env create -f environment.yaml
+# Activate the conda environment
+conda activate snakemake_training
+# Deactivate the conda environment
+conda deactivate
+# Install a package in the current conda environment
+conda install package_name
+# List installed packages in the current conda environment
+conda list
+# Remove a conda environment
+conda env remove -n snakemake_training
+# Update an existing conda environment with a YAML file
+conda env update -f environment.yaml
+```
+
+---
+
 ## 📚 Resources
 
 - Snakemake docs: https://snakemake.readthedocs.io
