@@ -19,19 +19,19 @@ You have two options to run this training:
 No installation required — everything runs in your browser.
 
 #### 1. Click **Code** → **Codespaces** → **Create codespace on main**
-#### 2. Wait for the environment to build
+![alt text](resources/images/start_codespace.png)
 
+#### 2. Wait for the environment to build
 ![alt text](resources/images/ready_to_use.png)
 
-#### 3. Open a terminal
-#### 4. Run:
+#### 3. In the terminal run:
 
 ```bash
 conda activate snakemake_training
 snakemake --version
 ```
 
-#### 5. What result is expected:
+#### 4. What result is expected:
 
 ```bash
 9.16.2
@@ -181,7 +181,14 @@ snakemake --dag | dot -Tpdf > dag.pdf
 
 ## 3. Training Content
 
-### 3.1 Basic Snakemake Concepts
+### 3.1 What should you expect to learn?
+Imagining you are in a airplane falling into ground and the pilot cant fly the plane, you are the only one who can save the plane, you have to learn how to fly the plane in 30 minutes, you have no experience in flying. You don't need to know all the possible controls and features to fly a plan using all areodynamics power.
+
+![alt text](resources/images/airplane_controls.png)
+
+Instead, you need to know the basic controls to keep the plane flying and land it safely. This is what we will do with Snakemake, we will learn the basic controls to keep our workflow flying and land it safely.
+
+### 3.2 Basic Snakemake Concepts
 
 You will learn:
 
@@ -196,7 +203,7 @@ Example:
 
 ---
 
-### 3.2 Different Execution Modes
+### 3.3 Different Execution Modes
 
 We will explore:
 
@@ -206,7 +213,7 @@ We will explore:
 
 ---
 
-### 3.3 Key Concepts
+### 3.4 Key Concepts
 
 - Rule dependencies
 - Wildcards
