@@ -10,7 +10,7 @@ This repository contains all materials needed to learn how to build reproducible
 
 ---
 
-Indexes:
+## Indexes:
 - [1. Getting Started](#1-getting-started)
 - [2. Pre-training Check](#-2-pre-training-check)
 - [3. Training Content](#3-training-content)
@@ -101,6 +101,8 @@ snakemake --version
 ```bash
 9.16.2
 ```
+
+[Return to Indexes](#indexes)
 
 ---
 
