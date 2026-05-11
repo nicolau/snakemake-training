@@ -10,7 +10,7 @@ This repository contains all materials needed to learn how to build reproducible
 
 ---
 
-## Indexes:
+## Index:
 - [1. Getting Started](#1-getting-started)
 - [2. Pre-training Check](#-2-pre-training-check)
 - [3. Training Content](#3-training-content)
@@ -22,6 +22,8 @@ This repository contains all materials needed to learn how to build reproducible
 - [Instructor Notes](#-instructor-notes)
 - [Glossary](#glossary)
 - [Resources](#-resources)
+
+---
 
 ## 1. Getting Started
 
@@ -102,7 +104,7 @@ snakemake --version
 9.16.2
 ```
 
-[Return to Indexes](#indexes)
+[Return to Index](#index)
 
 ---
 
@@ -192,6 +194,8 @@ snakemake --dag | dot -Tpdf > dag.pdf
 - Output files are created
 - DAG looks correct
 
+[Return to Index](#index)
+
 ---
 
 ## 3. Training Content
@@ -235,6 +239,8 @@ We will explore:
 - Config files
 - Logs and resources
 
+[Return to Index](#index)
+
 ---
 
 ## 4. RNA-seq Pipeline
@@ -256,6 +262,8 @@ You will build a simplified RNA-seq workflow:
 5. **Reporting**
    - MultiQC
 
+[Return to Index](#index)
+
 ---
 
 ## 5. Exercises
@@ -274,6 +282,8 @@ Add:
 - Use a `config.yaml`
 - Add threads/resources
 - Convert a rule to a script
+
+[Return to Index](#index)
 
 ---
 
@@ -296,6 +306,8 @@ snakemake --dag | dot -Tpdf > dag.pdf
 snakemake -F
 ```
 
+[Return to Index](#index)
+
 ---
 
 ## 7. Repository Structure
@@ -309,6 +321,8 @@ snakemake -F
 ├── data/
 └── README.md
 ```
+
+[Return to Index](#index)
 
 ---
 
@@ -335,6 +349,8 @@ micromamba install graphviz
 chmod -R 777 .
 ```
 
+[Return to Index](#index)
+
 ---
 
 ## 👨‍🏫 Instructor Notes
@@ -343,6 +359,8 @@ chmod -R 777 .
 - Let students run something early
 - Build complexity gradually
 - Encourage experimentation
+
+[Return to Index](#index)
 
 ---
 
@@ -369,6 +387,8 @@ conda env remove -n snakemake_training
 conda env update -f environment.yaml
 ```
 
+[Return to Index](#index)
+
 ---
 
 ## 📚 Resources
@@ -376,6 +396,8 @@ conda env update -f environment.yaml
 - Snakemake docs: https://snakemake.readthedocs.io
 - Snakemake wrappers: https://snakemake-wrappers.readthedocs.io
 - Bioconda: https://bioconda.github.io
+
+[Return to Index](#index)
 
 ---
 
@@ -387,3 +409,5 @@ This training is designed to introduce reproducible bioinformatics workflows usi
 - Conda/Mamba
 - Docker
 - GitHub Codespaces
+
+[Return to Index](#index)
