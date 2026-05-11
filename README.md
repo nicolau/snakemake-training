@@ -10,6 +10,19 @@ This repository contains all materials needed to learn how to build reproducible
 
 ---
 
+Indexes:
+- [1. Getting Started](#1-getting-started)
+- [2. Pre-training Check](#-2-pre-training-check)
+- [3. Training Content](#3-training-content)
+- [4. RNA-seq Pipeline](#4-rna-seq-pipeline)
+- [5. Exercises](#5-exercises)
+- [6. Useful Commands](#6-useful-commands)
+- [7. Repository Structure](#7-repository-structure)
+- [Troubleshooting](#troubleshooting)
+- [Instructor Notes](#-instructor-notes)
+- [Glossary](#glossary)
+- [Resources](#-resources)
+
 ## 1. Getting Started
 
 You have two options to run this training:
