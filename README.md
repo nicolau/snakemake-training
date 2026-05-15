@@ -33,7 +33,7 @@ You have two options to run this training:
 
 No installation required — everything runs in your browser.
 
-#### 1. Click **Code** → **Codespaces** → **Create codespace on main**
+#### 1. Click **Code** → **Codespaces** → **Create codespace on main branch**
 ![alt text](resources/images/start_codespace.png)
 
 #### 2. Wait for the environment to build
@@ -61,44 +61,57 @@ If this works, you're ready to go.
 Use this if you prefer running locally.
 
 #### 1. Install Docker
-- Install Docker Desktop (Windows/Mac) or Docker Engine (Linux) following https://www.docker.com/.
+
+- Install Docker Desktop (Windows/Mac) or Docker Engine (Linux) following instructions from https://www.docker.com/.
 
 #### 2. Clone this repository
 
+In your local machine terminal, run:
 ```bash
-git clone https://github.com/nicolau/snakemake_training.git
+git clone https://github.com/nicolau/snakemake-training.git
 cd snakemake_training
 ```
+
+If have any problems with permissions, try:
+```bash
+git config --global --unset credential.helper
+```
+Then try cloning again.
 
 #### 3. Build a Docker image
 
 ```bash
-docker build -f .devcontainer/Dockerfile -t snakemake_image .
+cd .devcontainer
+docker build -t snakemake_image .
 ```
 
-#### 4. Start a Docker container
+#### 4. List of Docker images to confirm build
 
 ```bash
-docker run -itd \
-  -v $(pwd):/workspace \
-  -w /workspace \
-  --name snakemake_container \
-  snakemake_image:latest /bin/bash
+docker images
 ```
 
-#### 5. Access terminal from Docker container
+#### 5. Start a Docker container
+
+```bash
+cd ../..
+
+docker run -itd -v $(pwd):/workspace -w /workspace/snakemake-training --name snakemake_container snakemake_image:latest /bin/bash
+```
+
+#### 6. Access terminal from Docker container
 ```bash
 docker exec -it snakemake_container /bin/bash
 ```
 
-#### 6. Activate and test Snakemake environment
+#### 7. Activate and test Snakemake environment
 
 ```bash
 conda activate snakemake_training
 snakemake --version
 ```
 
-#### 7. What result is expected:
+#### 8. What result is expected:
 
 ```bash
 9.16.2
@@ -115,7 +128,10 @@ Before starting, make sure everything works.
 ### Run a test workflow
 
 ```bash
-cd 01-pre-training-tutorial/01-first-step
+cd 01-pre-training-tutorial
+
+cd 01-first-step
+
 snakemake -n results/output.txt
 ```
 
@@ -149,7 +165,7 @@ Reasons:
 This was a dry-run (flag -n). The order of jobs does not reflect the order of execution.
 ```
 
-execute
+Then execute
 ```bash
 snakemake -j 1 results/output.txt
 ```
