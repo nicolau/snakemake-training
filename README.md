@@ -96,7 +96,7 @@ docker images
 ```bash
 cd ../..
 
-docker run -itd -v $(pwd):/workspace -w /workspace/snakemake-training --name snakemake_container snakemake_image:latest /bin/bash
+docker run -itd -v "$(pwd):/workspace" -w "/workspace" --name snakemake_container snakemake_image:latest /bin/bash
 ```
 
 #### 6. Access terminal from Docker container
