@@ -62,7 +62,7 @@ Use this if you prefer running locally.
 
 #### 1. Install Docker
 
-- Install Docker Desktop (Windows/Mac) or Docker Engine (Linux) following instructions from https://www.docker.com/.
+- Install Docker Desktop (Windows/Mac) or Docker Engine (Linux) following the instructions at https://www.docker.com/.
 
 #### 2. Clone this repository
 
@@ -72,7 +72,7 @@ git clone https://github.com/nicolau/snakemake-training.git
 cd snakemake_training
 ```
 
-If have any problems with permissions, try:
+If you have any problems with permissions, try:
 ```bash
 git config --global --unset credential.helper
 ```
@@ -217,7 +217,7 @@ snakemake --dag | dot -Tpdf > dag.pdf
 ## 3. Training Content
 
 ### 3.1 What should you expect to learn?
-Imagining you are in a airplane falling into ground and the pilot cant fly the plane, you are the only one who can save the plane, you have to learn how to fly the plane in 30 minutes, you have no experience in flying. You don't need to know all the possible controls and features to fly a plan using all areodynamics power.
+Imagine you are on an airplane falling toward the ground and the pilot can't fly the plane. You are the only one who can save it, and you have to learn how to fly in 30 minutes with no prior experience. You don't need to know all the possible controls and features to fly the plane using its full aerodynamic potential.
 
 ![alt text](resources/images/airplane_controls.png)
 
