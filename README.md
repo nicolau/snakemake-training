@@ -16,8 +16,9 @@ This repository contains all materials needed to learn how to build reproducible
 - [3. Training Content](#3-training-content)
 - [4. RNA-seq Pipeline](#4-rna-seq-pipeline)
 - [5. Exercises](#5-exercises)
-- [6. Useful Commands](#6-useful-commands)
-- [7. Repository Structure](#7-repository-structure)
+- [6. Docker Containers](#6-docker-containers)
+- [7. Useful Commands](#7-useful-commands)
+- [8. Repository Structure](#8-repository-structure)
 - [Troubleshooting](#troubleshooting)
 - [Instructor Notes](#-instructor-notes)
 - [Glossary](#glossary)
@@ -33,20 +34,23 @@ You have two options to run this training:
 
 No installation required — everything runs in your browser.
 
-#### 1. Click **Code** → **Codespaces** → **Create codespace on main branch**
+#### 1. Access the repository on GitHub:
+https://github.com/nicolau/snakemake-training
+
+#### 2. Click **Code** → **Codespaces** → **Create codespace on main branch**
 ![alt text](resources/images/start_codespace.png)
 
-#### 2. Wait for the environment to build
+#### 3. Wait for the environment to build
 ![alt text](resources/images/ready_to_use.png)
 
-#### 3. In the terminal run:
+#### 4. In the terminal run:
 
 ```bash
 conda activate snakemake_training
 snakemake --version
 ```
 
-#### 4. What result is expected:
+#### 5. What result is expected:
 
 ```bash
 9.16.2
@@ -66,13 +70,18 @@ Use this if you prefer running locally.
 
 #### 2. Clone this repository
 
-In your local machine terminal, run:
+In your local machine terminal (MacOS/Linux) or PowerShell (Windows), run:
 ```bash
 git clone https://github.com/nicolau/snakemake-training.git
-cd snakemake_training
+ls
 ```
 
-If you have any problems with permissions, try:
+expected result to find snakemake-training folder:
+```bash
+snakemake-training
+```
+
+If you have any problems with permissions to clone the repository, try:
 ```bash
 git config --global --unset credential.helper
 ```
@@ -81,7 +90,7 @@ Then try cloning again.
 #### 3. Build a Docker image
 
 ```bash
-cd .devcontainer
+cd snakemake-training/.devcontainer
 docker build -t snakemake_image .
 ```
 
@@ -94,7 +103,7 @@ docker images
 #### 5. Start a Docker container
 
 ```bash
-cd ../..
+cd ../
 
 docker run -itd -v "$(pwd):/workspace" -w "/workspace" --name snakemake_container snakemake_image:latest /bin/bash
 ```
@@ -169,6 +178,7 @@ Then execute
 ```bash
 snakemake -j 1 results/output.txt
 ```
+`-j` option is used to specify the number of cores to use for parallel execution. In this case, we set it to 1 to run the workflow sequentially. For local execution this is alias for `--cores` option, so you can also use `--cores 1` or `-c 1` instead of `-j 1`.
 
 Expected result
 ```bash
@@ -303,7 +313,87 @@ Add:
 
 ---
 
-## 6. Useful Commands
+## 6. Docker Containers
+
+This section covers the minimum you need to start a container from an existing image, mount your project files, and run a Snakemake pipeline inside it.
+
+### 6.1 Pull the miniconda3 Image
+
+```bash
+docker pull continuumio/miniconda3
+```
+
+### 6.2 Start a Container with a Mounted Volume
+
+The `-v` flag mounts a local directory into the container so your files are accessible inside it.
+
+```bash
+docker run -itd \
+  -v "$(pwd):/workspace" \
+  -w "/workspace" \
+  --name snakemake_container \
+  continuumio/miniconda3 /bin/bash
+```
+
+| Flag | Description |
+|------|-------------|
+| `-it` | Interactive terminal |
+| `-d` | Run in the background (detached) |
+| `-v "$(pwd):/workspace"` | Mount the current directory to `/workspace` inside the container |
+| `-w "/workspace"` | Set the working directory inside the container |
+| `--name` | Assign a name to the container |
+
+### 6.3 Enter the Container
+
+```bash
+docker exec -it snakemake_container /bin/bash
+```
+
+You are now inside the container. Any changes to files under `/workspace` are reflected in your local directory.
+
+### 6.4 Install Snakemake
+
+Inside the container, install Snakemake:
+
+```bash
+conda install -n base -c conda-forge -c bioconda snakemake -y
+```
+
+Verify the installation:
+
+```bash
+snakemake --version
+```
+
+### 6.5 Run a Snakemake Pipeline
+
+With your project files available under `/workspace`, run the pipeline:
+
+```bash
+# Dry run first to check the workflow
+snakemake -n
+
+# Execute the pipeline
+snakemake -j 1
+```
+
+### 6.6 Stop and Remove the Container
+
+When you are done:
+
+```bash
+# Stop the container
+docker stop snakemake_container
+
+# Remove the container
+docker rm snakemake_container
+```
+
+[Return to Index](#index)
+
+---
+
+## 7. Useful Commands
 
 ```bash
 # Dry run
@@ -326,7 +416,7 @@ snakemake -F
 
 ---
 
-## 7. Repository Structure
+## 8. Repository Structure
 
 ```
 .
