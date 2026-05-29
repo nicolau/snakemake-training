@@ -14,15 +14,6 @@ This repository contains all materials needed to learn how to build reproducible
 - [1. Getting Started](#1-getting-started)
 - [2. Pre-training Check](#-2-pre-training-check)
 - [3. Training Content](#3-training-content)
-- [4. RNA-seq Pipeline](#4-rna-seq-pipeline)
-- [5. Exercises](#5-exercises)
-- [6. Docker Containers](#6-docker-containers)
-- [7. Useful Commands](#7-useful-commands)
-- [8. Repository Structure](#8-repository-structure)
-- [Troubleshooting](#troubleshooting)
-- [Instructor Notes](#-instructor-notes)
-- [Glossary](#glossary)
-- [Resources](#-resources)
 
 ---
 
