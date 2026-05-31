@@ -233,11 +233,37 @@ Imagine you are on an airplane falling toward the ground and the pilot can't fly
 
 Instead, you need to know the basic controls to keep the plane flying and land it safely. This is what we will do with Snakemake, we will learn the basic controls to keep our workflow flying and land it safely.
 
-### 3.2 Basic Snakemake Concepts
+### 3.2 Reproducibility challenges in bioinformatics
+- **Complex dependencies**
+Bioinformatics analyses often rely on multiple software tools, libraries, and databases that must work together correctly. Each tool may require specific versions of programming languages, packages, or operating system components. Managing these dependencies manually can be difficult and error-prone, making it challenging to recreate the same computational environment across different machines or over time.
 
-You will learn:
+- **Software versions**
+Results can vary depending on the version of the software used during the analysis. New releases may introduce bug fixes, algorithmic changes, or different default parameters that affect outputs. Without recording and controlling software versions, it can be impossible for researchers or collaborators to reproduce published results exactly, even when using the same data and workflow.
 
+- **Data management**
+Modern biological datasets are often large, complex, and generated from multiple sources. Keeping track of raw data, intermediate files, processed results, and metadata can become difficult as projects grow. Poor data organization increases the risk of using incorrect files, losing important information, or being unable to retrace the steps that led to a particular result.
+
+- **Scalability**
+Bioinformatics workflows frequently begin with a small number of samples but later expand to hundreds or thousands. Analyses that work well for a few files may become inefficient, time-consuming, or impossible to manage manually at larger scales. Reproducible workflows must be designed to handle increasing data volumes while maintaining consistency and minimizing manual intervention.
+
+- **Collaboration**
+Research projects often involve multiple researchers working across different institutions, operating systems, and computing environments. Differences in software installations, file structures, and analysis procedures can lead to inconsistent results and communication challenges. Reproducible workflows provide a standardized framework that allows collaborators to share, understand, and execute analyses in a consistent and transparent manner.
+
+### 3.3 Introduction to workflow management with Snakemake
+- **What is Snakemake?**
+Snakemake is a workflow management system designed to create reproducible and scalable data analysis pipelines. It allows users to define analysis steps as a series of rules that specify input files, output files, and commands to be executed. Based on these rules, Snakemake automatically determines the order of execution, manages dependencies between tasks, and ensures that only the necessary steps are run. Originally developed for bioinformatics, Snakemake is now widely used across many scientific disciplines for automating complex computational workflows.
+
+- **Benefits of using Snakemake**
+Snakemake provides several advantages over manually executing analysis steps. It automatically tracks dependencies between files and only reruns tasks when inputs have changed, saving both time and computational resources. Workflows are written in a clear and modular format, making them easier to understand, maintain, and share with collaborators. Snakemake also integrates with software management tools such as Conda, Docker, and Singularity, helping ensure reproducibility across different computing environments. Furthermore, it can scale seamlessly from a personal laptop to high-performance computing clusters and cloud platforms.
+
+- **Snakemake vs traditional scripting**
+Traditional analysis pipelines are often implemented as shell scripts where commands are executed sequentially. While this approach may work for simple analyses, it becomes difficult to maintain as workflows grow in complexity. Scripts typically require manual tracking of dependencies, rerunning of failed steps, and management of intermediate files. In contrast, Snakemake models workflows as a directed acyclic graph (DAG) of interconnected tasks. This allows the workflow engine to automatically determine which steps need to be executed, parallelize independent tasks, handle failures gracefully, and provide a transparent and reproducible record of the entire analysis process. As a result, Snakemake workflows are generally more robust, scalable, and easier to reproduce than traditional scripting approaches.
+
+### 3.4 Basic Snakemake Concepts
 - What is a **rule**
+![alt text](resources/images/rule_anatomy.png)
+A rule is the fundamental building block of a Snakemake workflow. Each rule represents a single step in the analysis pipeline and describes how to transform one or more input files into one or more output files. A rule typically consists of three main components: the input files required for the analysis step, the output files that will be generated, and the command or script used to perform the transformation. By combining multiple rules, users can define complex workflows while keeping each analysis step modular and easy to understand.
+
 - How `input` and `output` work
 - How dependencies are inferred
 - Introduction to **wildcards**
