@@ -10,7 +10,7 @@
                 "ms-python.python"
             ],
             "settings": {
-                "workbench.startupEditor": "readme"
+                "workbench.startupEditor": "none"
             }
         }
     }
